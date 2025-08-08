@@ -1,57 +1,133 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Header */
 header {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 2rem;
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
+header h1 {
+  margin-bottom: 5px;
+  font-size: 2em;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #ccc;
+}
+
+/* Sections */
 section {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
+/* Project cards */
 .project {
-    background: white;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.project img {
-    width: 100%;
-    border-radius: 5px;
+/* Side-by-side layout */
+.project-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Stacks on small screens */
 }
 
+.project-image img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.project-info {
+  flex: 1;
+}
+
+/* Gallery */
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.project-gallery img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Skills */
+#skills ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+#skills li {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Links */
 a {
-    color: #007BFF;
-    text-decoration: none;
+  color: #007BFF;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: #333;
-    color: white;
+  text-align: center;
+  padding: 15px;
+  background-color: #222;
+  color: white;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .project-image img {
+    max-width: 100%;
+  }
+  .project-gallery img {
+    max-width: 48%;
+  }
 }
