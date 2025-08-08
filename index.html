@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Hi, I'm Muhammad Subhan Khan</h1>
-        <p>Aspiring Software Developer | Problem Solver | Tech Enthusiast</p>
-    </header>
 
-    <!-- About Me -->
+<header>
+    <h1>Muhammad Subhan Khan</h1>
+    <p>Aspiring Software Developer | Problem Solver | Tech Enthusiast</p>
+</header>
+
+<main>
+    <!-- About -->
     <section id="about">
         <h2>About Me</h2>
         <p>I’m a developer with experience in Python, Kotlin, and web development. I have worked on mobile app development, AI chatbots, and data analysis tools, and I’m passionate about solving real-world problems using technology.</p>
@@ -25,42 +26,43 @@
 
         <!-- Mobile Spectrometer -->
         <div class="project">
-            <h3>Mobile Spectrometer (Samsung A13)</h3>
-            <p>Designed and built a low-cost smartphone spectrometer for biomedical analysis. Implemented image-based spectrum extraction and ported the analysis logic from Python to native Kotlin.</p>
-            <p><strong>Tech Stack:</strong> Kotlin (Android), Python (prototype), NumPy logic (ported), 3D CAD, basic electronics</p>
-
-            <!-- YouTube demo -->
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/nm2ot1LktmU" 
-                    title="Mobile Spectrometer Demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+            <div class="project-container">
+                <div class="project-image">
+                    <img src="images/spectrometer.jpg" alt="Spectrometer build">
+                </div>
+                <div class="project-info">
+                    <h3>Mobile Phone Spectrometer (Samsung A13)</h3>
+                    <p>Designed and built a mobile spectrometer for biomedical analysis, with a Python-based UI optimised for mobile displays. 
+                    Captures and processes light spectra to generate intensity vs wavelength graphs, detect impurities or counterfeit products, and display real-time analysis results. Integrated with Kotlin for native Android performance and CAD-designed housing for portability.</p>
+                    <p><strong>Tech Stack:</strong> Kotlin (Android), Python (prototype), NumPy, 3D CAD, basic electronics</p>
+                    <p><a href="https://youtu.be/nm2ot1LktmU" target="_blank">Watch Demo on YouTube</a></p>
+                </div>
             </div>
-
-            <!-- Image gallery -->
-            <div class="gallery">
-                <figure><img src="images/designing.jpg" alt="Designing the spectrometer"></figure>
-                <figure><img src="images/intergratedpcbboard.jpg" alt="Integrated PCB board inside spectrometer"></figure>
-                <figure><img src="images/spectrometer.jpg" alt="Assembled spectrometer"></figure>
-                <figure><img src="images/spectrometrcad.jpg" alt="3D CAD model of the spectrometer"></figure>
-                <figure><img src="images/spectrum.jpg" alt="Captured light spectrum"></figure>
-                <figure><img src="images/switch.jpg" alt="Power switch and controls"></figure>
+            <!-- Gallery -->
+            <div class="project-gallery">
+                <img src="images/designing.jpg" alt="Designing the spectrometer">
+                <img src="images/intergratedpcbboard.jpg" alt="Integrated PCB board">
+                <img src="images/spectrometercad.jpg" alt="Spectrometer CAD">
+                <img src="images/spectrum.jpg" alt="Spectrum data">
+                <img src="images/spectrometerappdata.jpg" alt="Spectrometer app data">
+                <img src="images/counterfeitdata.jpg" alt="Counterfeit detection data">
+                <img src="images/switch.jpg" alt="Power switch and controls">
             </div>
-
-            <p>
-                <a href="https://youtu.be/nm2ot1LktmU" target="_blank">Watch the demo on YouTube</a>
-            </p>
         </div>
 
-        <!-- Chatbot Project -->
+        <!-- Chatbot -->
         <div class="project">
-            <h3>Early Disease Detection Chatbot</h3>
-            <p>Developed a chatbot using GPT-4 API for early detection of neurodegenerative diseases, integrated with Gradio for a web interface. The chatbot uses conversational analysis to help with preliminary detection and support healthcare professionals.</p>
-            <p><strong>Tech Stack:</strong> Python, OpenAI API, LlamaIndex, Gradio</p>
-            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+            <div class="project-container">
+                <div class="project-image">
+                    <img src="images/chatbot.png" alt="Chatbot interface">
+                </div>
+                <div class="project-info">
+                    <h3>Early Disease Detection Chatbot</h3>
+                    <p>Developed a chatbot using GPT-4 API for early detection of neurodegenerative diseases, integrated with Gradio for a web interface. The chatbot uses conversational analysis to support healthcare professionals in early screening processes.</p>
+                    <p><strong>Tech Stack:</strong> Python, OpenAI API, LlamaIndex, Gradio</p>
+                    <p><a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a></p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -84,10 +86,11 @@
         <p>GitHub: <a href="https://github.com/Uqyvyaeu" target="_blank">github.com/Uqyvyaeu</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-subhan-khan" target="_blank">linkedin.com/in/muhammad-subhan-khan</a></p>
     </section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 Muhammad Subhan Khan. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Muhammad Subhan Khan. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
-
