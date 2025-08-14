@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- filename fix to match your folder -->
+  <link href="style.css" rel="stylesheet" />
+  <title>Muhammad Subhan Khan — Portfolio</title>
+</head>
+<body>
+
+  <header>
+    <nav class="nav__bar" id="navbar">
+      <ul>
+        <li><a class="nav__links" href="#welcome-section">About</a></li>
+        <li><a class="nav__links" href="#projects">Projects</a></li>
+        <li><a class="nav__links" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="section__first" id="welcome-section">
+      <h1 class="section__h1">Hey, I'm Muhammad Subhan Khan</h1>
+      <p class="section__p">Materials Engineer and Software Developer</p>
+    </section>
+  </header>
+
+  <main>
+    <section class="section__projects" id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="projects__div">
+
+        <a href="https://uqvyuaeu.github.io/portfolio/" target="_blank" class="project-tile" rel="noopener">
+          <img class="projects__images" src="https://via.placeholder.com/600x400?text=Mobile+Spectrometer" alt="Custom Mobile Phone Spectrometer" />
+          <p class="projects__p">Custom Mobile Phone Spectrometer</p>
+        </a>
+
+        <a href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" class="project-tile" rel="noopener">
+          <img class="projects__images" src="https://via.placeholder.com/600x400?text=AI+Chatbot" alt="Early Disease Detection Chatbot" />
+          <p class="projects__p">Early Disease Detection Chatbot</p>
+        </a>
+
+        <a href="#" class="project-tile" target="_blank" rel="noopener">
+          <img class="projects__images" src="https://via.placeholder.com/600x400?text=Hyperloop+Suspension" alt="Hyperloop Suspension documentation" />
+          <p class="projects__p">Hyperloop Suspension — Tech Docs (coming soon)</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <section class="section__contact" id="contact">
+    <div class="contact__header">
+      <h2 class="contact__h2">Let's work together</h2>
+      <p class="contact__p">Based in London, open to hybrid and remote roles</p>
+    </div>
+
+    <div class="contact__links">
+      <a href="mailto:subhan_khan@hotmail.co.uk" id="email-link">Email</a>
+      <a href="https://github.com/uqvyuaeu" id="github-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://uqvyuaeu.github.io/portfolio/" id="portfolio-link" target="_blank" rel="noopener">Portfolio</a>
+      <a href="tel:+447521085239" id="phone-link">Call me</a>
+      <!-- Optional: add LinkedIn once you share the URL
+      <a href="YOUR_LINKEDIN_URL" id="linkedin-link" target="_blank" rel="noopener">LinkedIn</a>
+      -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="wrap inline">&copy; <span id="year"></span> Muhammad Subhan Khan</p>
+  </footer>
+
+  <script>
+    // tiny enhancement: keeps the footer year current
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
