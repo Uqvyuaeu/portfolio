@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Subhan Khan — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Spectrometer Project Card -->
-  <a class="card video-card" 
-     href="https://www.youtube.com/watch?v=nm2ot1LktmU" 
-     target="_blank" 
-     rel="noopener noreferrer">
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__brand">MSK</div>
+    <nav>
+      <a href="#home">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div class="card__media">
-      <img src="images/spectrometer.jpg" alt="Custom Mobile Phone Spectrometer">
-
-      <!-- Play Icon Overlay -->
-      <div class="play-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
+  <!-- HERO / ABOUT -->
+  <section id="home" class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Hello! I'm</p>
+      <h1>Muhammad Subhan <span>Khan</span></h1>
+      <p class="lead">
+        Engineering & Technology Enthusiast — I build practical tools across optics, Python/ML and mechanical design to solve real problems and ship useful products.
+      </p>
+      <div class="cta">
+        <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
+        <!-- Update this path if your CV is elsewhere -->
+        <a class="btn" href="files/Muhammad Subhan Khan Resume (5)[1].pdf" target="_blank" rel="noopener">View CV</a>
       </div>
     </div>
 
-    <div class="card__content">
-      <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
-      <p class="card__desc">
-        Portable spectrometer for a Samsung A13 with Python image analysis 
-        integrated into an Android app for real-time intensity and absorbance plots.
-      </p>
-      <ul class="card__tags">
-        <li>Python</li>
-        <li>Android</li>
-        <li>Optics</li>
-      </ul>
+    <!-- Update the path if your photo is elsewhere -->
+    <div class="hero__photo">
+      <img src="images/subhan.jpg" alt="Muhammad Subhan Khan" />
     </div>
-    
-  </a>
+  </section>
+
+  <!-- ABOUT ME blurb -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a hands-on engineer and developer with experience in optical systems, materials testing, finite element analysis, and Python application development. I enjoy making well-tested tools that deliver measurable impact—like a custom smartphone spectrometer and a Hyperloop suspension design.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="skills__grid">
+      <div class="skills__card">
+        <h3>Programming & Web</h3>
+        <ul class="tags">
+          <li>Java</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>HTML &amp; CSS</li>
+          <li>MATLAB</li>
+        </ul>
+      </div>
+
+      <div class="skills__card">
+        <h3>Engineering & Simulation</h3>
+        <ul class="tags">
+          <li>Tensile Testing</li>
+          <li>FEA</li>
+          <li>SolidWorks</li>
+          <li>Material Selection</li>
+        </ul>
+      </div>
+
+      <div class="skills__card">
+        <h3>Tools & Productivity</h3>
+        <ul class="tags">
+          <li>Microsoft Office Suite</li>
+          <li>Financial Management &amp; Budgeting</li>
+          <li>Clay</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline: Past / Present / Future -->
+  <section class="timeline">
+    <div class="timeline__card">
+      <span class="pill pill--muted">Past</span>
+      <p>
+        I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into computer vision and data analysis in Python, and a curiosity for how engineering and software fit together in real products.
+      </p>
+    </div>
+    <div class="timeline__card">
+      <span class="pill">Present</span>
+      <p>
+        I'm building a mobile-phone spectrometer with real-time analysis, an early-disease exploration chatbot (GPT-4 + Gradio), and designed a Hyperloop suspension with ASTM E8 testing and FEA. I focus on clean interfaces, validation, and measurable impact.
+      </p>
+    </div>
+    <div class="timeline__card">
+      <span class="pill pill--accent">Future</span>
+      <p>
+        Keep pushing practical innovation: robust data tools, applied ML, and devices that blend software and engineering. I enjoy teaming up with people who care about outcomes and craft.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="cards">
+      <!-- SPECTROMETER (clickable entire card, same tab; play icon overlay) -->
+      <!-- Update the image path if needed -->
+      <a class="card video-card" href="https://www.youtube.com/watch?v=nm2ot1LktmU">
+        <div class="card__media">
+          <img src="images/spectrometer.jpg" alt="Spectrometer demo" />
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
+        <p class="card__desc">
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for real-time intensity and absorbance plots.
+        </p>
+        <ul class="card__tags">
+          <li>Python</li><li>Android</li><li>Optics</li>
+        </ul>
+      </a>
+
+      <!-- CHATBOT -->
+      <!-- Update img path to 'images/chatbot.jpg' which you uploaded -->
+      <a class="card" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/chatbot.jpg" alt="Chatbot sign-in screen" />
+        </div>
+        <h3 class="card__title">Early Disease Detection <span class="muted">Chatbot</span></h3>
+        <p class="card__desc">
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for review and research.
+        </p>
+        <ul class="card__tags">
+          <li>Python</li><li>NLP</li><li>Gradio</li>
+        </ul>
+      </a>
+
+      <!-- HYPERLOOP -->
+      <!-- Update suspension image name if needed -->
+      <a class="card" href="files/White Paper_Hyperlink Submission.pdf" target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
+        </div>
+        <h3 class="card__title">Design of Hyperloop Suspension</h3>
+        <p class="card__desc">
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration notes and team documentation.
+        </p>
+        <ul class="card__tags">
+          <li>FEA</li><li>Materials</li><li>Docs</li>
+        </ul>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Let’s work together</h2>
+    <p class="muted">I reply quickly by email.</p>
+    <div class="links">
+      <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
+      <a class="btn" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="tel:+447521085239">Call me</a>
+    </div>
+    <p class="copyright">© 2025 Muhammad Subhan Khan</p>
+  </section>
 
 </body>
 </html>
