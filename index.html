@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="color-scheme" content="dark light" />
 </head>
 <body>
 
-  <!-- BACKDROP GLOWS (purely visual) -->
+  <!-- Ambient glows -->
   <div class="glow glow--tl"></div>
   <div class="glow glow--tr"></div>
   <div class="glow glow--b"></div>
@@ -49,32 +50,32 @@
   <section class="section container">
     <h2 class="section__title"><span>About Me</span></h2>
     <p class="body">
-      I’m a hands-on engineer and developer with experience in optical systems, materials testing,
-      finite element analysis, and Python application development. I enjoy making well-tested tools
-      that deliver measurable impact—like a custom smartphone spectrometer and a Hyperloop suspension design.
+      I’m a hands-on engineer and developer with experience in optical systems, materials testing, finite element analysis,
+      and Python application development. I enjoy making well-tested tools that deliver measurable impact—like a custom
+      smartphone spectrometer and a Hyperloop suspension design.
     </p>
   </section>
 
   <!-- TIMELINE -->
   <section class="section container">
     <div class="triptych">
-      <div class="tile">
+      <article class="tile">
         <span class="pill pill--muted">Past</span>
         <p>I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into
         computer vision and data analysis in Python, and a curiosity for how engineering and software
         fit together in real products.</p>
-      </div>
-      <div class="tile">
+      </article>
+      <article class="tile">
         <span class="pill">Present</span>
         <p>I’m building a mobile-phone spectrometer with real-time analysis, an early-disease exploration
         chatbot (GPT-4 + Gradio), and designed a Hyperloop suspension with ASTM E8 testing and FEA.
         I focus on clean interfaces, validation, and measurable impact.</p>
-      </div>
-      <div class="tile">
+      </article>
+      <article class="tile">
         <span class="pill pill--accent">Future</span>
         <p>Keep pushing practical innovation: robust data tools, applied ML, and devices that blend software
         and engineering. I enjoy teaming up with people who care about outcomes and craft.</p>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -110,44 +111,46 @@
 
     <div class="cards">
 
-      <!-- Spectrometer – same-tab open, pulsing play overlay -->
+      <!-- Spectrometer (same tab, animated play overlay + hint) -->
       <a class="card card--lift video-card" href="https://www.youtube.com/watch?v=nm2ot1LktmU">
-        <div class="card__media">
-          <img src="images/spectrometer.jpg" alt="Spectrometer demo" />
+        <figure class="card__media">
+          <img src="images/spectrometer.jpg" alt="Custom spectrometer device" />
+          <figcaption class="sr-only">Watch demo on YouTube</figcaption>
+
           <div class="play">
             <span class="pulse"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#fff" d="M8 5v14l11-7z"/>
             </svg>
           </div>
           <div class="hint">Watch demo</div>
-        </div>
+        </figure>
+
         <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
         <p class="card__desc">
-          Portable spectrometer for a Samsung A13 with Python image analysis integrated into
-          an Android app for real-time intensity and absorbance plots.
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an
+          Android app for real-time intensity and absorbance plots.
         </p>
         <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
       </a>
 
       <!-- Chatbot -->
       <a class="card card--lift" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
-        <div class="card__media">
-          <img src="images/chatbot.jpg" alt="Chatbot sign-in" />
-        </div>
+        <figure class="card__media">
+          <img src="images/chatbot.jpg" alt="Chatbot sign-in screen" />
+        </figure>
         <h3 class="card__title">Early Disease Detection <span class="muted">Chatbot</span></h3>
         <p class="card__desc">
-          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured
-          notes for review and research.
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for review and research.
         </p>
         <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
       </a>
 
-      <!-- Hyperloop – opens PDF -->
+      <!-- Hyperloop (opens PDF) -->
       <a class="card card--lift" href="files/White Paper_Hyperlink Submission.pdf" target="_blank" rel="noopener">
-        <div class="card__media">
-          <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
-        </div>
+        <figure class="card__media">
+          <img src="images/suspension.jpg" alt="Hyperloop suspension CAD render" />
+        </figure>
         <h3 class="card__title">Design of Hyperloop Suspension</h3>
         <p class="card__desc">
           Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
