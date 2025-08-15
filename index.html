@@ -25,74 +25,67 @@
 
   <main>
     <section class="section__projects" id="projects">
-      <h2>Selected Projects</h2>
+      <h2 class="projects__title">Selected Projects</h2>
 
-      <div class="projects__div">
+      <div class="project-grid">
 
-        <!-- 1) Mobile Phone Spectrometer (YouTube embedded) -->
-        <div class="project-tile">
-          <iframe
-            class="project__video"
-            width="100%"
-            height="400"
-            src="https://www.youtube.com/embed/nm2ot1LktmU"
-            title="Custom Mobile Phone Spectrometer"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-          <p class="projects__p">Custom Mobile Phone Spectrometer</p>
-          <p class="project__desc">
+        <!-- Spectrometer (YouTube embed) -->
+        <article class="card" data-theme="indigo">
+          <div class="card__media">
+            <iframe
+              src="https://www.youtube.com/embed/nm2ot1LktmU"
+              title="Custom Mobile Phone Spectrometer"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <header class="card__header">
+            <h3>Custom Mobile Phone Spectrometer</h3>
+          </header>
+          <p class="card__desc">
             Portable spectrometer built for a Samsung A13. Python image analysis integrated with an Android app for
-            real time intensity and absorbance plots. Useful for quick checks in the field.
+            real time intensity and absorbance plots. Useful for fast checks in the field.
           </p>
-        </div>
+          <footer class="card__meta">
+            <span>Python</span><span>Android</span><span>Optics</span>
+          </footer>
+        </article>
 
-        <!-- 2) Early Disease Detection Chatbot -->
-        <a href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" class="project-tile" rel="noopener">
-          <img
-            class="projects__images"
-            src="images/ai-chatbot.jpg"
-            alt="Chatbot user interface on a laptop"
-            loading="lazy"
-          />
-          <p class="projects__p">Early Disease Detection Chatbot</p>
-          <p class="project__desc">
+        <!-- Early Disease Detection Chatbot -->
+        <a class="card" data-theme="teal"
+           href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
+          <div class="card__media">
+            <img src="images/googlesignin.jpg" alt="Chatbot UI sign in screen" />
+          </div>
+          <header class="card__header">
+            <h3>Early Disease Detection Chatbot</h3>
+          </header>
+          <p class="card__desc">
             Prototype conversational tool using Python, GPT 4 and a Gradio interface. Explores language patterns and
             exports structured notes for review and research.
           </p>
+          <footer class="card__meta">
+            <span>Python</span><span>NLP</span><span>Gradio</span>
+          </footer>
         </a>
 
-        <!-- 3) Hyperloop Suspension Technical Docs -->
-        <a href="#" class="project-tile" target="_blank" rel="noopener">
-          <img
-            class="projects__images"
-            src="images/hyperloop-suspension.jpg"
-            alt="Finite element stress plot of a suspension component"
-            loading="lazy"
-          />
-          <p class="projects__p">Hyperloop Suspension Technical Docs</p>
-          <p class="project__desc">
-            Materials selection with ASTM E8 testing and FEA for durability and weight reduction. Full design notes
-            and integration guide. Link will be updated when public.
+        <!-- Design of Hyperloop Suspension -->
+        <article class="card" data-theme="amber">
+          <div class="card__media">
+            <img src="images/suspension.png" alt="Hyperloop suspension component render" />
+          </div>
+          <header class="card__header">
+            <h3>Design of Hyperloop Suspension</h3>
+          </header>
+          <p class="card__desc">
+            Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
+            Produced integration notes and documentation for the pod team.
           </p>
-        </a>
-
-        <!-- 4) Bluetooth Pill Dispenser -->
-        <a href="#" class="project-tile" target="_blank" rel="noopener">
-          <img
-            class="projects__images"
-            src="images/pill-dispenser.jpg"
-            alt="Arduino pill dispenser with servo and ultrasonic sensor"
-            loading="lazy"
-          />
-          <p class="projects__p">Bluetooth Pill Dispenser</p>
-          <p class="project__desc">
-            Arduino based pill dispenser controlled by Bluetooth. Servo releases doses on schedule and an ultrasonic
-            sensor tracks stock level to trigger alerts.
-          </p>
-        </a>
+          <footer class="card__meta">
+            <span>FEA</span><span>Materials</span><span>Documentation</span>
+          </footer>
+        </article>
 
       </div>
     </section>
@@ -107,10 +100,9 @@
     <div class="contact__links">
       <a href="mailto:subhan_khan@hotmail.co.uk" id="email-link">Email</a>
       <a href="https://github.com/uqvyuaeu" id="github-link" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://uqvyuaeu.github.io/portfolio/" id="portfolio-link" target="_blank" rel="noopener">Portfolio</a>
       <a href="tel:+447521085239" id="phone-link">Call me</a>
-      <!-- Optional: add LinkedIn when ready
-      <a href="YOUR_LINKEDIN_URL" id="linkedin-link" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- Add LinkedIn when ready:
+      <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
       -->
     </div>
   </section>
@@ -124,4 +116,3 @@
   </script>
 </body>
 </html>
-
