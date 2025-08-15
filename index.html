@@ -2,118 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subhan Khan - Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Subhan Khan — Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header__container">
-      <img src="images/subhan.jpg" alt="Profile photo" class="header__photo"/>
-      <div class="header__text">
-        <h1>Subhan Khan</h1>
-        <p>Engineering & Technology Enthusiast | Data Analysis | Design | Development</p>
-        <a href="mailto:subhan_khan@hotmail.co.uk" class="btn">Contact Me</a>
-        <a href="docs/SubhanKhanCV.pdf" class="btn" target="_blank" rel="noopener">View CV</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#home" class="brand">MSK</a>
+      <ul class="nav__links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-kicker">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__wrap">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Hello! I’m</p>
+        <h1 class="hero__title">Muhammad Subhan Khan</h1>
+        <p class="hero__subtitle">
+          Engineering &amp; Technology Enthusiast — I build practical tools across optics,
+          Python/ML and mechanical design to solve real problems and ship useful products.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
+          <a class="btn btn--ghost" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener">View CV</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="images/subhan.jpg" alt="Subhan Khan portrait" class="hero__photo"/>
       </div>
     </div>
-  </header>
+  </section>
 
-  <section class="section__about" id="about">
-    <div class="container">
+  <!-- ABOUT KICKER -->
+  <section class="about-kicker" id="about-kicker">
+    <div class="about-kicker__inner">
       <h2>About Me</h2>
       <p>
-        I am an aspiring engineer and developer with experience in optical systems,
-        materials testing, finite element analysis, and Python application development.
-        My portfolio showcases projects that merge technical expertise with
-        creative problem-solving — from a custom smartphone spectrometer to Hyperloop
-        suspension design.
+        I’m a hands-on engineer and developer with experience in optical systems, materials testing,
+        finite element analysis, and Python application development. I enjoy making well-tested tools
+        that deliver measurable impact—like a custom smartphone spectrometer and a Hyperloop suspension design.
       </p>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section class="section__projects" id="projects">
-    <div class="container">
-      <h2 class="projects__title">Selected Projects</h2>
-      <div class="cards">
+    <h2 class="projects__title">Selected Projects</h2>
 
-        <!-- Spectrometer -->
-        <article class="card video-trigger"
-                 data-video="https://www.youtube.com/embed/nm2ot1LktmU"
-                 role="button" tabindex="0"
-                 aria-label="Watch spectrometer video">
-          <div class="card__media">
-            <img src="images/spectrometer.jpg" alt="Custom Mobile Phone Spectrometer"/>
-          </div>
-          <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
-          <p class="card__desc">
-            Portable spectrometer for a Samsung A13 with Python image analysis
-            integrated into an Android app for real-time intensity and absorbance plots.
-          </p>
-          <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
-        </article>
+    <div class="cards">
+      <!-- Spectrometer (video modal) -->
+      <article class="card video-trigger"
+               data-video="https://www.youtube.com/embed/nm2ot1LktmU"
+               role="button" tabindex="0"
+               aria-label="Watch spectrometer demo video">
+        <div class="card__media">
+          <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail" />
+        </div>
+        <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
+        <p class="card__desc">
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an
+          Android app for real-time intensity and absorbance plots.
+        </p>
+        <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
+      </article>
 
-        <!-- Chatbot -->
-        <a class="card card--link"
-           href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot"
-           target="_blank" rel="noopener">
-          <div class="card__media">
-            <img src="images/googlesignin.jpg" alt="Chatbot sign in"/>
-          </div>
-          <h3 class="card__title">Early Disease Detection Chatbot</h3>
-          <p class="card__desc">
-            Prototype conversational tool using Python, GPT-4, and a Gradio interface.
-            Exports structured notes for review and research.
-          </p>
-          <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
-        </a>
+      <!-- Chatbot -->
+      <a class="card card--link"
+         href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot"
+         target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/googlesignin.jpg" alt="Chatbot sign-in screen" />
+        </div>
+        <h3 class="card__title">Early Disease Detection Chatbot</h3>
+        <p class="card__desc">
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports
+          structured notes for review and research.
+        </p>
+        <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
+      </a>
 
-        <!-- Hyperloop -->
-        <article class="card pdf-trigger"
-                 data-pdf="docs/hyperloop-whitepaper.pdf"
-                 role="button" tabindex="0"
-                 aria-label="Open Hyperloop Suspension white paper">
-          <div class="card__media">
-            <img src="images/suspension.jpg" alt="Hyperloop suspension render"/>
-          </div>
-          <h3 class="card__title">Design of Hyperloop Suspension</h3>
-          <p class="card__desc">
-            Materials selection, ASTM E8 testing and FEA to improve durability
-            and reduce weight. Produced integration notes and team documentation.
-          </p>
-          <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
-        </article>
-
-      </div>
+      <!-- Hyperloop (PDF modal) -->
+      <article class="card pdf-trigger"
+               data-pdf="docs/hyperloop-whitepaper.pdf"
+               role="button" tabindex="0"
+               aria-label="Open Hyperloop Suspension white paper">
+        <div class="card__media">
+          <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
+        </div>
+        <h3 class="card__title">Design of Hyperloop Suspension</h3>
+        <p class="card__desc">
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
+          Produced integration notes and team documentation.
+        </p>
+        <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
+      </article>
     </div>
   </section>
 
-  <!-- Video Modal -->
-  <div id="video-modal" class="modal" aria-hidden="true">
-    <div class="modal__dialog">
-      <button class="modal__close" aria-label="Close video">×</button>
-      <div class="modal__body">
-        <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
+  <!-- CONTACT -->
+  <section class="section__contact" id="contact">
+    <div class="contact__header">
+      <h2 class="contact__h2">Let’s work together</h2>
+      <p class="contact__p">I reply quickly by email.</p>
     </div>
-  </div>
-
-  <!-- PDF Modal -->
-  <div id="pdf-modal" class="modal" aria-hidden="true">
-    <div class="modal__dialog">
-      <button class="modal__close" aria-label="Close document">×</button>
-      <div class="modal__body">
-        <iframe id="pdf-iframe" src="" frameborder="0"></iframe>
-      </div>
+    <div class="contact__links">
+      <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
+      <a class="btn btn--ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn--ghost" href="tel:+447521085239">Call me</a>
     </div>
-  </div>
+  </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 Subhan Khan. All rights reserved.</p>
-    </div>
+    <p>&copy; <span id="year"></span> Muhammad Subhan Khan</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" class="modal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Video dialog">
+      <button class="modal__close" aria-label="Close video">×</button>
+      <div class="modal__body">
+        <iframe id="video-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF MODAL -->
+  <div id="pdf-modal" class="modal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="PDF dialog">
+      <button class="modal__close" aria-label="Close document">×</button>
+      <div class="modal__body">
+        <iframe id="pdf-iframe" src=""></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=1"></script>
 </body>
 </html>
