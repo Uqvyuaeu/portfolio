@@ -4,48 +4,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-/* ========================
-   Reveal-on-scroll (skills, cards)
-   ======================== */
-(function(){
-  var items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || items.length === 0){
-    // show immediately if IO not supported
-    items.forEach(function(el){ el.classList.add('is-visible'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting){
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.12});
-  items.forEach(function(el){ io.observe(el); });
-})();
-
-/* ========================
-   Build skill chips from lists
-   ======================== */
-(function(){
-  var chipsWrap = document.getElementById('skillChips');
-  var lists = document.querySelectorAll('#skills .skills-grid li');
-  if (!chipsWrap || lists.length === 0) return;
-
-  var frag = document.createDocumentFragment();
-  lists.forEach(function(item){
-    var chip = document.createElement('span');
-    chip.className = 'skill-chip reveal';
-    chip.textContent = item.getAttribute('data-skill') || item.textContent.trim();
-    frag.appendChild(chip);
-  });
-  chipsWrap.appendChild(frag);
-})();
-
-/* ========================
-   Video modal
-   ======================== */
+// VIDEO MODAL
 (function(){
   var modal = document.getElementById('video-modal');
   var frame = document.getElementById('video-iframe');
@@ -78,9 +37,7 @@
   window.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
 })();
 
-/* ========================
-   PDF modal (Hyperloop)
-   ======================== */
+// PDF MODAL (Hyperloop)
 (function(){
   var modal = document.getElementById('pdf-modal');
   var frame = document.getElementById('pdf-iframe');
@@ -98,6 +55,7 @@
   }
 
   function resolve(url){
+    // Try preferred path, then fall back to original encoded filename if needed
     var alt = 'White%20Paper_Hyperlink%20Submission.pdf';
     return fetch(url, {method:'HEAD'}).then(function(r){
       if (r.ok) return url;
