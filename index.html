@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 <body>
 
@@ -24,50 +24,96 @@
   <!-- HERO -->
   <section class="section__first" id="home">
     <div class="intro__content reveal">
-      <h1 class="section__h1">Hi, I’m Muhammad Subhan Khan</h1>
-      <p class="section__p">Materials Engineer & Software Developer</p>
+      <p class="eyebrow">Hello! I’m</p>
+      <h1 class="section__h1">Muhammad Subhan Khan</h1>
+      <p class="section__p">
+        Materials Engineer & Software Developer — I build practical tools across optics,
+        embedded systems, and Python/ML to turn ideas into working products.
+      </p>
       <div class="cta">
-        <!-- CV expected at repo root as Subhan_Khan_CV.pdf -->
+        <!-- CV should be in repo root as Subhan_Khan_CV.pdf -->
         <a id="cvBtn" class="btn-primary" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-        <a class="btn-ghost" href="#projects">View Projects</a>
+        <a class="btn-ghost" href="#projects">See Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT: Past / Present / Future -->
   <section class="section__about" id="about">
-    <div class="about__content reveal">
+    <div class="about__header reveal">
       <img class="avatar" src="images/subhan.jpg" alt="Portrait of Muhammad Subhan Khan" />
-      <div class="about__textblock">
+      <div>
         <h2 class="about__title">About Me</h2>
-        <p class="about__text">
-          I’m a hands-on engineer who likes turning ideas into working tools. My work spans optics, embedded systems,
-          Python/ML, and mechanical design. Recent projects include a mobile phone spectrometer with real-time analysis,
-          an early-disease exploration chatbot built with GPT and Gradio, and engineering the design of a Hyperloop suspension.
-          I care about clean interfaces, solid testing, and delivering measurable results.
+        <p class="about__subtitle">
+          I like solving real problems with a mix of engineering and software — shipping neat, reliable tools.
+        </p>
+      </div>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__card reveal">
+        <h3 class="about__pill">Past</h3>
+        <p>
+          I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into
+          computer vision and data analysis in Python, and a curiosity for how engineering and software
+          fit together in real products.
+        </p>
+      </div>
+
+      <div class="about__card reveal">
+        <h3 class="about__pill">Present</h3>
+        <p>
+          I’m building a mobile-phone spectrometer with real-time analysis, an early-disease exploration
+          chatbot (GPT-4 + Gradio), and designed a Hyperloop suspension with ASTM E8 testing and FEA.
+          I focus on clean interfaces, validation, and measurable impact.
+        </p>
+      </div>
+
+      <div class="about__card reveal">
+        <h3 class="about__pill">Future</h3>
+        <p>
+          Keep pushing practical innovation: robust data tools, applied ML, and devices that blend software
+          and engineering. I enjoy teaming up with people who care about outcomes and craft.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (Categorised) -->
   <section class="section__skills" id="skills">
-    <div class="skills__inner reveal">
-      <h2 class="skills__title">Core Skills</h2>
-      <ul class="skills__list">
-        <li class="skill">Python</li>
-        <li class="skill">Pandas</li>
-        <li class="skill">Numpy</li>
-        <li class="skill">OpenCV</li>
-        <li class="skill">NLP</li>
-        <li class="skill">Gradio</li>
-        <li class="skill">Android</li>
-        <li class="skill">Arduino</li>
-        <li class="skill">Optics</li>
-        <li class="skill">FEA</li>
-        <li class="skill">Materials</li>
-        <li class="skill">CAD</li>
-      </ul>
+    <div class="skills__inner">
+      <h2 class="skills__title reveal">Technical Skills</h2>
+
+      <div class="skills__groups">
+        <div class="skills__group reveal">
+          <h3>Programming & Web</h3>
+          <ul class="skills__chips">
+            <li>Java</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>HTML &amp; CSS</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+
+        <div class="skills__group reveal">
+          <h3>Engineering & Simulation</h3>
+          <ul class="skills__chips">
+            <li>Tensile Testing</li>
+            <li>FEA</li>
+            <li>SolidWorks</li>
+            <li>Material Selection</li>
+          </ul>
+        </div>
+
+        <div class="skills__group reveal">
+          <h3>Tools & Productivity</h3>
+          <ul class="skills__chips">
+            <li>Microsoft Office Suite</li>
+            <li>Financial Management &amp; Budgeting</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -76,7 +122,7 @@
     <h2 class="projects__title reveal">Selected Projects</h2>
 
     <div class="cards">
-      <!-- Spectrometer (modal player) -->
+      <!-- Spectrometer (modal video) -->
       <article class="card reveal">
         <div class="card__media video-thumb" data-video-id="nm2ot1LktmU" role="button" tabindex="0" aria-label="Play spectrometer demo">
           <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail"
@@ -85,22 +131,24 @@
         </div>
         <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
         <p class="card__desc">
-          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for
-          real-time intensity and absorbance plots.
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app
+          for real-time intensity and absorbance plots.
         </p>
+        <div class="madewith"><span>Made with:</span> Python, Android (Kotlin), OpenCV/NumPy, Matplotlib</div>
         <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
       </article>
 
-      <!-- Chatbot (GitHub) -->
+      <!-- Chatbot -->
       <a class="card card--link reveal" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
         <div class="card__media">
           <img src="images/googlesignin.jpg" alt="Chatbot sign in" />
         </div>
         <h3 class="card__title">Early Disease Detection Chatbot</h3>
         <p class="card__desc">
-          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for
-          review and research.
+          Prototype conversational tool that explores early-disease queries and exports structured notes for review
+          and research. Built with GPT-4 + Gradio.
         </p>
+        <div class="madewith"><span>Made with:</span> Python, GPT-4 API, Gradio, NLP</div>
         <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
       </a>
 
@@ -111,9 +159,10 @@
         </div>
         <h3 class="card__title">Design of Hyperloop Suspension</h3>
         <p class="card__desc">
-          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration
-          notes and team documentation.
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced
+          integration notes and team documentation.
         </p>
+        <div class="madewith"><span>Made with:</span> SolidWorks, ASTM E8 Testing, FEA, Materials</div>
         <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
       </article>
     </div>
@@ -127,20 +176,13 @@
     </div>
     <div class="contact__links reveal">
       <a class="btn-primary" href="mailto:subhan_khan@hotmail.co.uk" aria-label="Email Subhan Khan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px;margin-right:.5rem">
-          <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
-          <path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2"/>
-        </svg>Email
+        Email
       </a>
       <a class="btn-ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener" aria-label="GitHub profile">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px;margin-right:.5rem">
-          <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.18c-3.34.73-4.04-1.6-4.04-1.6-.55-1.41-1.35-1.79-1.35-1.79-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.25 1.85 1.25 1.08 1.85 2.83 1.32 3.52 1 .11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.37 1.25-3.21-.13-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.78.84 1.25 1.91 1.25 3.21 0 4.59-2.81 5.6-5.49 5.89.43.37.81 1.1.81 2.22v3.29c0 .33.22.71.82.59A12 12 0 0 0 12 .5Z"/>
-        </svg>GitHub
+        GitHub
       </a>
       <a class="btn-ghost" href="tel:+447521085239" aria-label="Call Subhan Khan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px;margin-right:.5rem">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2c-9.4-1-16.74-8.34-17.74-17.74A2 2 0 0 1 4.92 2h3a2 2 0 0 1 2 1.72c.13.93.35 1.84.65 2.72A2 2 0 0 1 10.9 8l-1.12 1.12a16 16 0 0 0 6 6l1.12-1.12a2 2 0 0 1 1.56-.67c.88.3 1.79.52 2.72.65A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/>
-        </svg>Call me
+        Call me
       </a>
     </div>
   </section>
@@ -160,7 +202,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=8"></script>
 
   <!-- Safety net: if reveal never fires, show content after 1.2s -->
   <script>
@@ -172,4 +214,3 @@
   </script>
 </body>
 </html>
-
