@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <meta name="color-scheme" content="dark light" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -18,7 +18,9 @@
   <header class="nav">
     <div class="nav__brand">MSK</div>
     <nav>
-      <a href="#home">About</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -47,7 +49,7 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="section container">
+  <section id="about" class="section container">
     <h2 class="section__title"><span>About Me</span></h2>
     <p class="body">
       I’m a hands-on engineer and developer with experience in optical systems, materials testing, finite element analysis,
@@ -56,8 +58,8 @@
     </p>
   </section>
 
-  <!-- TIMELINE -->
-  <section class="section container">
+  <!-- JOURNEY -->
+  <section id="journey" class="section container">
     <div class="triptych">
       <article class="tile">
         <span class="pill pill--muted">Past</span>
@@ -99,7 +101,7 @@
       <div class="skillcard">
         <h3>Tools & Productivity</h3>
         <ul class="tags">
-          <li>Microsoft Office Suite</li><li>Financial Management &amp; Budgeting</li><li>Clay</li>
+          <li>Microsoft Office Suite</li><li>Financial Management &amp; Budgeting</li><li>Clay (AI)</li>
         </ul>
       </div>
     </div>
@@ -111,13 +113,18 @@
 
     <div class="cards">
 
-      <!-- Spectrometer (same tab, animated play overlay + hint) -->
-      <a class="card card--lift video-card" href="https://www.youtube.com/watch?v=nm2ot1LktmU">
+      <!-- Spectrometer (opens modal popup) -->
+      <a
+        class="card card--lift video-card"
+        href="#"
+        data-video="https://www.youtube.com/embed/nm2ot1LktmU?autoplay=1&rel=0&modestbranding=1"
+        aria-label="Open spectrometer demo video"
+      >
         <figure class="card__media">
           <img src="images/spectrometer.jpg" alt="Custom spectrometer device" />
           <figcaption class="sr-only">Watch demo on YouTube</figcaption>
 
-          <div class="play">
+          <div class="play" aria-hidden="true">
             <span class="pulse"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#fff" d="M8 5v14l11-7z"/>
@@ -173,6 +180,60 @@
     </div>
     <p class="copyright">© 2025 Muhammad Subhan Khan</p>
   </section>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Spectrometer Demo">
+      <button class="modal__close" type="button" aria-label="Close video" data-close-modal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+          <path fill="#fff" d="M18.3 5.71L12 12.01l-6.3-6.3-1.41 1.41 6.3 6.3-6.3 6.3 1.41 1.41 6.3-6.29 6.29 6.29 1.41-1.41-6.29-6.3 6.29-6.29z"/>
+        </svg>
+      </button>
+      <div class="modal__media">
+        <iframe id="videoFrame" title="Spectrometer Demo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal video logic
+    (function () {
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      const openers = document.querySelectorAll('.video-card');
+      let lastFocus = null;
+
+      function openModal(src) {
+        lastFocus = document.activeElement;
+        frame.src = src;
+        modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('.modal__close').focus();
+      }
+      function closeModal() {
+        modal.setAttribute('aria-hidden','true');
+        frame.src = ''; // stop video
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      openers.forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          const src = el.getAttribute('data-video');
+          if (src) openModal(src);
+        });
+      });
+
+      modal.addEventListener('click', e => {
+        if (e.target.matches('[data-close-modal]')) closeModal();
+      });
+      document.addEventListener('keydown', e => {
+        if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 
 </body>
 </html>
