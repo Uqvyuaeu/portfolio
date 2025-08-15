@@ -2,19 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Subhan Khan — Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#home" class="brand">MSK</a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- INTRO / HERO -->
+  <section class="section__first" id="home">
+    <div class="intro__content">
+      <h1 class="section__h1">Hi, I’m Muhammad Subhan Khan</h1>
+      <p class="section__p">Materials Engineer and Software Developer</p>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="section__about" id="about">
+    <div class="about__content">
+      <h2 class="about__title">About Me</h2>
+      <p class="about__text">
+        I am a materials engineer and software developer who enjoys turning ideas into practical tools.
+        My work spans optical systems, data-driven applications and mechanical design. Recent projects include a
+        custom mobile phone spectrometer with real-time analysis, an AI chatbot that explores early disease
+        detection patterns, and engineering the design of a Hyperloop suspension. I like clean interfaces,
+        clear problem framing, and measurable results.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
   <section class="section__projects" id="projects">
     <h2 class="projects__title">Selected Projects</h2>
 
     <div class="cards">
-
       <!-- Spectrometer (YouTube) -->
       <article class="card">
         <div class="card__media">
@@ -28,7 +60,8 @@
         </div>
         <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
         <p class="card__desc">
-          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for real time intensity and absorbance plots.
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for
+          real-time intensity and absorbance plots.
         </p>
         <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
       </article>
@@ -40,7 +73,8 @@
         </div>
         <h3 class="card__title">Early Disease Detection Chatbot</h3>
         <p class="card__desc">
-          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for review and research.
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for
+          review and research.
         </p>
         <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
       </a>
@@ -52,14 +86,34 @@
         </div>
         <h3 class="card__title">Design of Hyperloop Suspension</h3>
         <p class="card__desc">
-          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration notes and team documentation.
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration
+          notes and team documentation.
         </p>
         <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
       </article>
-
     </div>
   </section>
 
+  <!-- CONTACT -->
+  <section class="section__contact" id="contact">
+    <div class="contact__header">
+      <h2 class="contact__h2">Let’s work together</h2>
+      <p class="contact__p">Based in London. Open to hybrid and remote.</p>
+    </div>
+    <div class="contact__links">
+      <a href="mailto:subhan_khan@hotmail.co.uk">Email</a>
+      <a href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:+447521085239">Call me</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Muhammad Subhan Khan</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
