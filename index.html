@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=11" />
 </head>
 <body>
 
@@ -21,19 +21,20 @@
     </div>
   </nav>
 
-  <!-- INTRO / HERO -->
+  <!-- HERO -->
   <section class="section__first" id="home">
     <div class="intro__content reveal">
       <h1 class="section__h1">Hi, I’m Muhammad Subhan Khan</h1>
       <p class="section__p">Materials Engineer & Software Developer</p>
       <div class="cta">
-        <a class="btn-primary" href="files/Subhan_Khan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <!-- CV lives in repo root as Subhan_Khan_CV.pdf; script will fallback to email if missing -->
+        <a id="cvBtn" class="btn-primary" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         <a class="btn-ghost" href="#projects">View Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT ME -->
+  <!-- ABOUT -->
   <section class="section__about" id="about">
     <div class="about__content reveal">
       <img class="avatar" src="images/subhan.jpg" alt="Portrait of Muhammad Subhan Khan" />
@@ -78,7 +79,8 @@
       <!-- Spectrometer (modal player) -->
       <article class="card reveal">
         <div class="card__media video-thumb" data-video-id="nm2ot1LktmU" role="button" tabindex="0" aria-label="Play spectrometer demo">
-          <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail" />
+          <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail"
+               onerror="this.onerror=null;this.src='images/googlesignin.jpg';" />
           <button class="play-btn" aria-hidden="true"></button>
         </div>
         <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
@@ -125,20 +127,17 @@
     </div>
     <div class="contact__links reveal">
       <a class="btn-primary" href="mailto:subhan_khan@hotmail.co.uk" aria-label="Email Subhan Khan">
-        <!-- Mail icon -->
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px;margin-right:.5rem">
           <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
           <path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2"/>
         </svg>Email
       </a>
       <a class="btn-ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener" aria-label="GitHub profile">
-        <!-- GitHub icon -->
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px;margin-right:.5rem">
           <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.18c-3.34.73-4.04-1.6-4.04-1.6-.55-1.41-1.35-1.79-1.35-1.79-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.25 1.85 1.25 1.08 1.85 2.83 1.32 3.52 1 .11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.37 1.25-3.21-.13-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.78.84 1.25 1.91 1.25 3.21 0 4.59-2.81 5.6-5.49 5.89.43.37.81 1.1.81 2.22v3.29c0 .33.22.71.82.59A12 12 0 0 0 12 .5Z"/>
         </svg>GitHub
       </a>
       <a class="btn-ghost" href="tel:+447521085239" aria-label="Call Subhan Khan">
-        <!-- Phone icon -->
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px;margin-right:.5rem">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2c-9.4-1-16.74-8.34-17.74-17.74A2 2 0 0 1 4.92 2h3a2 2 0 0 1 2 1.72c.13.93.35 1.84.65 2.72A2 2 0 0 1 10.9 8l-1.12 1.12a16 16 0 0 0 6 6l1.12-1.12a2 2 0 0 1 1.56-.67c.88.3 1.79.52 2.72.65A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/>
         </svg>Call me
@@ -161,44 +160,6 @@
     </div>
   </div>
 
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Reveal-on-scroll (no external libs)
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: .15 });
-    revealEls.forEach(el => io.observe(el));
-
-    // Modal player logic
-    const modal = document.getElementById('video-modal');
-    const iframe = document.getElementById('modal-iframe');
-
-    function openVideo(id){
-      const src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-      iframe.src = src;
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeVideo(){
-      iframe.src = '';
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('.video-thumb').forEach(el => {
-      el.addEventListener('click', () => openVideo(el.dataset.videoId));
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideo(el.dataset.videoId); }
-      });
-    });
-    document.querySelector('.modal__close').addEventListener('click', closeVideo);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
-  </script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
