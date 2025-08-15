@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=3" />
   <meta name="color-scheme" content="dark" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -46,7 +46,7 @@
     </div>
   </section>
 
-  <!-- ABOUT BLURB -->
+  <!-- ABOUT -->
   <section class="about-kicker" id="about-kicker">
     <div class="about-kicker__inner">
       <h2>About Me</h2>
@@ -58,49 +58,58 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (boxed, three columns) -->
   <section id="skills" class="skills section">
     <div class="container">
       <h2 class="section-title">Technical Skills</h2>
 
-      <div class="skills-grid reveal">
-        <ul>
-          <li data-skill="Java">Java</li>
-          <li data-skill="Python">Python</li>
-          <li data-skill="SQL">SQL</li>
-          <li data-skill="HTML & CSS">HTML &amp; CSS</li>
-          <li data-skill="JavaScript">JavaScript</li>
-          <li data-skill="MATLAB">MATLAB</li>
-        </ul>
+      <div class="skills-groups">
+        <!-- Group 1 -->
+        <div class="skill-card">
+          <h3>Programming &amp; Web</h3>
+          <div class="chips">
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">HTML &amp; CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">MATLAB</span>
+          </div>
+        </div>
 
-        <ul>
-          <li data-skill="Tensile Testing">Tensile Testing</li>
-          <li data-skill="FEA">FEA</li>
-          <li data-skill="SolidWorks">SolidWorks</li>
-          <li data-skill="Microsoft Office Suite">Microsoft Office Suite</li>
-        </ul>
+        <!-- Group 2 -->
+        <div class="skill-card">
+          <h3>Engineering &amp; Simulation</h3>
+          <div class="chips">
+            <span class="chip">Tensile Testing</span>
+            <span class="chip">FEA</span>
+            <span class="chip">SolidWorks</span>
+            <span class="chip">Material Selection</span>
+          </div>
+        </div>
 
-        <ul>
-          <li data-skill="Financial Management & Budgeting">Financial Management &amp; Budgeting</li>
-          <li data-skill="Material Selection">Material Selection</li>
-        </ul>
+        <!-- Group 3 -->
+        <div class="skill-card">
+          <h3>Tools &amp; Productivity</h3>
+          <div class="chips">
+            <span class="chip">Microsoft Office Suite</span>
+            <span class="chip">Financial Management &amp; Budgeting</span>
+            <span class="chip">Clay (AI)</span>
+          </div>
+        </div>
       </div>
-
-      <!-- Optional: skill tags (chips) auto-filled by JS from the lists above -->
-      <div class="skill-chips reveal" id="skillChips"></div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section class="section__projects" id="projects">
     <h2 class="projects__title">Selected Projects</h2>
-    <div class="cards">
 
+    <div class="cards">
       <!-- Spectrometer (video modal) -->
-      <article class="card video-trigger reveal"
+      <article class="card video-trigger"
                data-video="https://www.youtube.com/embed/nm2ot1LktmU"
-               role="button" tabindex="0"
-               aria-label="Play spectrometer demo">
+               role="button" tabindex="0" aria-label="Play spectrometer demo">
         <div class="card__media">
           <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail" />
         </div>
@@ -113,7 +122,7 @@
       </article>
 
       <!-- Chatbot (external GitHub) -->
-      <a class="card card--link reveal"
+      <a class="card card--link"
          href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot"
          target="_blank" rel="noopener">
         <div class="card__media">
@@ -128,10 +137,9 @@
       </a>
 
       <!-- Hyperloop (PDF modal) -->
-      <article class="card pdf-trigger reveal"
+      <article class="card pdf-trigger"
                data-pdf="docs/hyperloop-whitepaper.pdf"
-               role="button" tabindex="0"
-               aria-label="Open Hyperloop Suspension white paper">
+               role="button" tabindex="0" aria-label="Open Hyperloop Suspension white paper">
         <div class="card__media">
           <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
         </div>
@@ -183,6 +191,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
