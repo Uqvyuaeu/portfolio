@@ -1,49 +1,74 @@
-// Video modal
-(function () {
-  const videoModal = document.getElementById('video-modal');
-  const videoIframe = document.getElementById('video-iframe');
+// Mark that JS is active (enables reveal animation styles)
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
 
-  document.querySelectorAll('.video-trigger').forEach(card => {
-    card.addEventListener('click', () => {
-      videoIframe.src = card.getAttribute('data-video') + '?autoplay=1';
-      videoModal.classList.add('open');
-    });
-  });
-
-  videoModal.querySelector('.modal__close').addEventListener('click', () => {
-    videoIframe.src = '';
-    videoModal.classList.remove('open');
-  });
-
-  videoModal.addEventListener('click', e => {
-    if (e.target === videoModal) {
-      videoIframe.src = '';
-      videoModal.classList.remove('open');
-    }
-  });
+// Footer year
+(function(){
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 })();
 
-// PDF modal
-(function () {
-  const pdfModal = document.getElementById('pdf-modal');
-  const pdfIframe = document.getElementById('pdf-iframe');
+// Reveal-on-scroll (safe + simple)
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  els.forEach(function(el){ io.observe(el); });
+})();
 
-  document.querySelectorAll('.pdf-trigger').forEach(card => {
-    card.addEventListener('click', () => {
-      pdfIframe.src = card.getAttribute('data-pdf');
-      pdfModal.classList.add('open');
+// Modal YouTube player
+(function(){
+  var modal = document.getElementById('video-modal');
+  var iframe = document.getElementById('modal-iframe');
+  if (!modal || !iframe) return;
+
+  function openVideo(id){
+    iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo(){
+    iframe.src = '';
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.video-thumb').forEach(function(el){
+    el.addEventListener('click', function(){ openVideo(el.dataset.videoId); });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideo(el.dataset.videoId); }
     });
   });
 
-  pdfModal.querySelector('.modal__close').addEventListener('click', () => {
-    pdfIframe.src = '';
-    pdfModal.classList.remove('open');
-  });
+  var closeBtn = document.querySelector('.modal__close');
+  if (closeBtn) closeBtn.addEventListener('click', closeVideo);
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeVideo(); });
+  window.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
+})();
 
-  pdfModal.addEventListener('click', e => {
-    if (e.target === pdfModal) {
-      pdfIframe.src = '';
-      pdfModal.classList.remove('open');
-    }
-  });
+// CV fallback: if file missing at repo root, switch to email
+(function(){
+  var btn = document.getElementById('cvBtn');
+  if (!btn) return;
+  var url = btn.getAttribute('href');
+  fetch(url, { method: 'HEAD' })
+    .then(function(res){
+      if (!res.ok) throw new Error('not found');
+    })
+    .catch(function(){
+      btn.setAttribute('href', 'mailto:subhan_khan@hotmail.co.uk?subject=CV request&body=Hi Subhan, could you please share your CV?');
+      btn.textContent = 'Request CV by Email';
+      btn.removeAttribute('target');
+      btn.removeAttribute('rel');
+    });
 })();
