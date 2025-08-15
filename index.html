@@ -1,47 +1,65 @@
-<section class="section__projects" id="projects">
-  <h2 class="projects__title">Selected Projects</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
 
-  <div class="cards">
-    <!-- Spectrometer (YouTube) -->
-    <article class="card">
-      <div class="card__media">
-        <iframe
-          src="https://www.youtube.com/embed/nm2ot1LktmU"
-          title="Custom Mobile Phone Spectrometer"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-      <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
-      <p class="card__desc">
-        Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for real time intensity and absorbance plots.
-      </p>
-      <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
-    </article>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
 
-    <!-- Chatbot (link to GitHub) -->
-    <a class="card card--link" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
-      <div class="card__media">
-        <img src="images/googlesignin.jpg" alt="Chatbot sign in" />
-      </div>
-      <h3 class="card__title">Early Disease Detection Chatbot</h3>
-      <p class="card__desc">
-        Prototype conversational tool using Python, GPT 4 and a Gradio interface. Exports structured notes for review and research.
-      </p>
-      <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
-    </a>
+  <section class="section__projects" id="projects">
+    <h2 class="projects__title">Selected Projects</h2>
 
-    <!-- Hyperloop -->
-    <article class="card">
-      <div class="card__media">
-        <img src="images/suspension.png" alt="Hyperloop suspension render" />
-      </div>
-      <h3 class="card__title">Design of Hyperloop Suspension</h3>
-      <p class="card__desc">
-        Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration notes and team documentation.
-      </p>
-      <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
-    </article>
-  </div>
-</section>
+    <div class="cards">
+
+      <!-- Spectrometer (YouTube) -->
+      <article class="card">
+        <div class="card__media">
+          <iframe
+            src="https://www.youtube.com/embed/nm2ot1LktmU"
+            title="Custom Mobile Phone Spectrometer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
+        <p class="card__desc">
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for real time intensity and absorbance plots.
+        </p>
+        <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
+      </article>
+
+      <!-- Chatbot (GitHub link) -->
+      <a class="card card--link" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/googlesignin.jpg" alt="Chatbot sign in" />
+        </div>
+        <h3 class="card__title">Early Disease Detection Chatbot</h3>
+        <p class="card__desc">
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for review and research.
+        </p>
+        <ul class="card__tags"><li>Python</li><li>NLP</li><li>Gradio</li></ul>
+      </a>
+
+      <!-- Hyperloop -->
+      <article class="card">
+        <div class="card__media">
+          <img src="images/suspension.png" alt="Hyperloop suspension render" />
+        </div>
+        <h3 class="card__title">Design of Hyperloop Suspension</h3>
+        <p class="card__desc">
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration notes and team documentation.
+        </p>
+        <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
