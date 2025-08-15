@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
 
@@ -27,7 +27,7 @@
       <h1 class="section__h1">Hi, I’m Muhammad Subhan Khan</h1>
       <p class="section__p">Materials Engineer & Software Developer</p>
       <div class="cta">
-        <!-- CV lives in repo root as Subhan_Khan_CV.pdf; script will fallback to email if missing -->
+        <!-- CV expected at repo root as Subhan_Khan_CV.pdf -->
         <a id="cvBtn" class="btn-primary" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         <a class="btn-ghost" href="#projects">View Projects</a>
       </div>
@@ -160,6 +160,16 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
+
+  <!-- Safety net: if reveal never fires, show content after 1.2s -->
+  <script>
+    setTimeout(function(){
+      if(!document.querySelector('.reveal.in-view')){
+        document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+      }
+    }, 1200);
+  </script>
 </body>
 </html>
+
