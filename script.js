@@ -12,7 +12,6 @@ document.documentElement.classList.add('js');
 (function(){
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
-    // Browser too old: just show everything
     els.forEach(function(el){ el.classList.add('in-view'); });
     return;
   }
@@ -23,7 +22,7 @@ document.documentElement.classList.add('js');
         io.unobserve(e.target);
       }
     });
-  }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
   els.forEach(function(el){ io.observe(el); });
 })();
 
@@ -62,7 +61,6 @@ document.documentElement.classList.add('js');
   var btn = document.getElementById('cvBtn');
   if (!btn) return;
   var url = btn.getAttribute('href');
-  // HEAD on GitHub Pages is usually OK; fallback to email on any error
   fetch(url, { method: 'HEAD' })
     .then(function(res){
       if (!res.ok) throw new Error('not found');
