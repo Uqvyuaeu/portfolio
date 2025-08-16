@@ -4,17 +4,6 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Mobile menu toggle
-(function(){
-  var btn = document.querySelector('.nav__toggle');
-  var links = document.getElementById('primary-nav');
-  if (!btn || !links) return;
-  btn.addEventListener('click', function(){
-    var open = links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-})();
-
 // VIDEO MODAL
 (function(){
   var modal = document.getElementById('video-modal');
@@ -48,7 +37,7 @@
   window.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
 })();
 
-// PDF MODAL (Hyperloop)
+// PDF MODAL (Hyperloop) with graceful fallback
 (function(){
   var modal = document.getElementById('pdf-modal');
   var frame = document.getElementById('pdf-iframe');
@@ -65,9 +54,9 @@
     document.body.style.overflow = '';
   }
 
-  // Robust path check
   function resolve(url){
-    var alt = 'White%20Paper_Hyperlink%20Submission.pdf';
+    // Try preferred path, then fall back to an alternative filename if needed
+    var alt = 'White%20Paper_Hyperlink%20Submission.pdf'; // original upload name safety
     return fetch(url, {method:'HEAD'}).then(function(r){
       if (r.ok) return url;
       return fetch(alt, {method:'HEAD'}).then(function(r2){
@@ -99,4 +88,35 @@
   if (closeBtn) closeBtn.addEventListener('click', closePDF);
   modal.addEventListener('click', function(e){ if (e.target === modal) closePDF(); });
   window.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closePDF(); });
+})();
+
+// Robust GitHub opener for .gh-link (Smart Expense Tracker)
+(function(){
+  document.querySelectorAll('.gh-link').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      // let middle-click / modifier keys pass through
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      e.preventDefault();
+
+      var searchUrl = anchor.getAttribute('href'); // fallback search
+      var candidates = [];
+      try {
+        candidates = JSON.parse(anchor.getAttribute('data-candidates') || '[]');
+      } catch(_) {}
+
+      (function tryNext(i){
+        if (i >= candidates.length) {
+          window.open(searchUrl, '_blank', 'noopener');
+          return;
+        }
+        fetch(candidates[i], { method:'HEAD' })
+          .then(function(r){
+            if (r.ok) window.open(candidates[i], '_blank', 'noopener');
+            else tryNext(i+1);
+          })
+          .catch(function(){ tryNext(i+1); });
+      })(0);
+    });
+  });
 })();
