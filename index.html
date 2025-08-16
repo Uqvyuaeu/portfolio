@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
   <meta name="color-scheme" content="dark" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="#home" class="brand">MSK</a>
-      <ul class="nav__links">
+      <a href="#home" class="brand" aria-label="Go to Home">MSK</a>
+
+      <!-- mobile toggle -->
+      <button class="nav__toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="primary-nav" class="nav__links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about-kicker">About</a></li>
         <li><a href="#journey">Journey</a></li>
@@ -36,19 +42,25 @@
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
-          <a class="btn btn--ghost" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener">View CV</a>
+          <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk" aria-label="Email Subhan">Contact Me</a>
+          <a class="btn btn--ghost" href="Subhan_Khan_CV.pdf" target="_blank" rel="noopener" aria-label="Open CV in new tab">View CV</a>
         </div>
       </div>
 
       <div class="hero__media">
-        <img src="images/subhan.jpg" alt="Subhan Khan portrait" class="hero__photo"/>
+        <img
+          src="images/subhan.jpg"
+          alt="Subhan Khan portrait"
+          class="hero__photo"
+          loading="eager"
+          width="720" height="960"
+        />
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about-kicker" id="about-kicker">
+  <section class="about-kicker section-offset" id="about-kicker">
     <div class="about-kicker__inner">
       <h2>About Me</h2>
       <p>
@@ -60,7 +72,7 @@
   </section>
 
   <!-- JOURNEY -->
-  <section class="journey section" id="journey">
+  <section class="journey section section-offset" id="journey">
     <div class="container">
       <div class="journey-grid">
         <article class="journey-card">
@@ -93,7 +105,7 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="skills section">
+  <section id="skills" class="skills section section-offset">
     <div class="container">
       <h2 class="section-title">Technical Skills</h2>
 
@@ -133,16 +145,20 @@
   </section>
 
   <!-- PROJECTS -->
-  <section class="section__projects" id="projects">
+  <section class="section__projects section-offset" id="projects">
     <h2 class="projects__title">Selected Projects</h2>
 
     <div class="cards">
+
       <!-- Spectrometer (video modal) -->
       <article class="card video-trigger"
                data-video="https://www.youtube.com/embed/nm2ot1LktmU"
                role="button" tabindex="0" aria-label="Play spectrometer demo">
         <div class="card__media">
-          <img src="images/spectrometer.jpg" alt="Spectrometer demo thumbnail" />
+          <img src="images/spectrometer.jpg"
+               alt="Spectrometer demo"
+               loading="lazy" width="1280" height="720"/>
+          <span class="play-badge" aria-hidden="true">▶ Watch demo</span>
         </div>
         <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
         <p class="card__desc">
@@ -152,12 +168,14 @@
         <ul class="card__tags"><li>Python</li><li>Android</li><li>Optics</li></ul>
       </article>
 
-      <!-- Chatbot (GitHub) -->
+      <!-- Chatbot -->
       <a class="card card--link"
          href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot"
-         target="_blank" rel="noopener">
+         target="_blank" rel="noopener" aria-label="Open Early Disease Detection Chatbot on GitHub">
         <div class="card__media">
-          <img src="images/chatbot.jpg" alt="Chatbot sign-in screen" />
+          <img src="images/chatbot.jpg"
+               alt="Chatbot sign-in screen"
+               loading="lazy" width="1280" height="720"/>
         </div>
         <h3 class="card__title">Early Disease Detection Chatbot</h3>
         <p class="card__desc">
@@ -172,7 +190,9 @@
                data-pdf="docs/hyperloop-whitepaper.pdf"
                role="button" tabindex="0" aria-label="Open Hyperloop Suspension white paper">
         <div class="card__media">
-          <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
+          <img src="images/suspension.jpg"
+               alt="Hyperloop suspension render"
+               loading="lazy" width="1280" height="720"/>
         </div>
         <h3 class="card__title">Design of Hyperloop Suspension</h3>
         <p class="card__desc">
@@ -182,39 +202,36 @@
         <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
       </article>
 
-      <!-- Smart Expense Tracker -->
-      <div class="card">
-        <div class="card__media">
+      <!-- Smart Expense Tracker (image should be fully visible) -->
+      <a class="card card--link" href="https://github.com/uqvyuaeu/Smart-Expense-Tracker"
+         target="_blank" rel="noopener" aria-label="Open Smart Expense Tracker on GitHub">
+        <div class="card__media card__media--contain">
           <img src="images/expensetracker.jpg"
-               alt="Smart Expense Tracker CLI screenshot" />
+               alt="Smart Expense Tracker CLI screenshot"
+               loading="lazy" width="1280" height="720"/>
         </div>
         <h3 class="card__title">Smart Expense Tracker</h3>
         <p class="card__desc">
-          A finance management app to log income/expenses, generate category breakdowns,
-          set budgets, and get insights. Clean UI, persistent storage, and analytics for
-          better decisions.
+          A finance management app to log income/expenses, generate category
+          breakdowns, set budgets, and get insights. Clean UI, persistent storage, and analytics for better decisions.
         </p>
-        <ul class="card__tags">
-          <li>Python</li><li>SQLite</li><li>Data Visualization</li><li>Git &amp; GitHub</li>
-        </ul>
-        <div class="card__actions">
-          <a class="btn btn--ghost" href="https://github.com/uqvyuaeu/SmartExpenseTracker"
-             target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </div>
+        <ul class="card__tags"><li>Python</li><li>SQLite</li><li>Data Visualization</li></ul>
+        <div class="card__cta"><span class="btn btn--ghost small">View on GitHub</span></div>
+      </a>
+
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section__contact" id="contact">
+  <section class="section__contact section-offset" id="contact">
     <div class="contact__header">
       <h2 class="contact__h2">Let’s work together</h2>
       <p class="contact__p">I reply quickly by email.</p>
     </div>
     <div class="contact__links">
-      <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
-      <a class="btn btn--ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn btn--ghost" href="tel:+447521085239">Call me</a>
+      <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk" aria-label="Email Subhan">Email</a>
+      <a class="btn btn--ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener" aria-label="Open GitHub">GitHub</a>
+      <a class="btn btn--ghost" href="tel:+447521085239" aria-label="Call Subhan">Call me</a>
     </div>
   </section>
 
@@ -243,6 +260,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
