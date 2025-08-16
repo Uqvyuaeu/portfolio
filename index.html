@@ -42,6 +42,7 @@
       </div>
 
       <div class="hero__media">
+        <!-- REVERTED PROFILE PHOTO -->
         <img src="images/subhan.jpg" alt="Subhan Khan portrait" class="hero__photo"/>
       </div>
     </div>
@@ -59,7 +60,7 @@
     </div>
   </section>
 
-  <!-- JOURNEY -->
+  <!-- JOURNEY: Past / Present / Future -->
   <section class="journey section" id="journey">
     <div class="container">
       <div class="journey-grid">
@@ -92,7 +93,7 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (boxed, three columns) -->
   <section id="skills" class="skills section">
     <div class="container">
       <h2 class="section-title">Technical Skills</h2>
@@ -185,29 +186,24 @@
         <ul class="card__tags"><li>FEA</li><li>Materials</li><li>Docs</li></ul>
       </article>
 
-      <!-- Smart Expense Tracker (robust GitHub link + contain image) -->
-      <a class="card card--link gh-link"
-         href="https://github.com/uqvyuaeu?tab=repositories&q=expense%20tracker&type=source"
-         data-candidates='[
-           "https://github.com/uqvyuaeu/Smart-Expense-Tracker",
-           "https://github.com/uqvyuaeu/smart-expense-tracker",
-           "https://github.com/uqvyuaeu/expense-tracker",
-           "https://github.com/uqvyuaeu/SmartExpenseTracker"
-         ]'
-         target="_blank" rel="noopener"
-         aria-label="Open Smart Expense Tracker on GitHub">
+      <!-- Smart Expense Tracker (external GitHub) -->
+      <div class="card">
         <div class="card__media card__media--contain">
           <img src="images/expensetracker.jpg" alt="Smart Expense Tracker CLI screenshot" />
         </div>
         <h3 class="card__title">Smart Expense Tracker</h3>
         <p class="card__desc">
-          A finance management app to log income/expenses, generate category
-          breakdowns, set budgets, and get insights. Clean UI, persistent storage,
-          and analytics for better decisions.
+          A finance management app to log income/expenses, generate category breakdowns, set budgets,
+          and get insights. Clean UI, persistent storage, and analytics for better decisions.
         </p>
-        <ul class="card__tags"><li>Python</li><li>SQLite</li><li>Data Visualization</li></ul>
-        <div class="card__cta"><span class="btn btn--ghost small">View on GitHub</span></div>
-      </a>
+        <ul class="card__tags">
+          <li>Python</li><li>SQLite</li><li>Data Visualization</li><li>Git &amp; GitHub</li>
+        </ul>
+        <div style="padding:0 1rem 1.1rem">
+          <a class="btn btn--ghost" href="https://github.com/uqvyuaeu/finance-tracker-cli" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
