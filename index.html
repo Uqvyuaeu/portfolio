@@ -1,262 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Subhan Khan — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Nav -->
+
+  <!-- NAV -->
   <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">MSK</div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#journey">Journey</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <div class="nav__brand">MSK</div>
+    <nav class="nav__links">
+      <a href="#home">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">HELLO! I’M</p>
-        <h1 class="hero-title">
-          Muhammad Subhan <span class="fade">Khan</span>
-        </h1>
-        <p class="hero-sub">
-          Engineering & Technology Enthusiast — I build practical tools across optics,
-          Python/ML and mechanical design to solve real problems and ship useful products.
-        </p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
-          <a class="btn btn-ghost" href="Muhammad Subhan Khan Resume (5)[1].pdf" target="_blank" rel="noopener">View CV</a>
-        </div>
-      </div>
+  <!-- HERO -->
+  <section id="home" class="section hero">
+    <div class="hero__content">
+      <p class="eyebrow">Hello! I’m</p>
+      <h1>Muhammad Subhan <span>Khan</span></h1>
+      <p class="lead">
+        Engineering & Technology Enthusiast — I build practical tools across optics,
+        Python/ML and mechanical design to solve real problems and ship useful products.
+      </p>
 
-      <div class="hero-photo">
-        <img src="images/subhan.jpg" alt="Muhammad Subhan Khan" />
+      <div class="cta">
+        <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
+        <!-- update path if needed -->
+        <a class="btn" href="files/Muhammad Subhan Khan Resume (5)[1].pdf" target="_blank" rel="noopener">View CV</a>
       </div>
+    </div>
+
+    <!-- update image path if needed -->
+    <div class="hero__photo">
+      <img src="images/subhan.jpg" alt="Muhammad Subhan Khan" />
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p class="about-lead">
-        I’m a hands-on engineer and developer with experience in optical systems, materials testing,
-        finite element analysis, and Python application development. I enjoy making well-tested tools
-        that deliver measurable impact—like a custom smartphone spectrometer and a Hyperloop suspension design.
+  <!-- ABOUT -->
+  <section class="section about">
+    <h2>About Me</h2>
+    <p>
+      I’m a hands-on engineer and developer with experience in optical systems, materials testing,
+      finite element analysis, and Python application development. I enjoy making well-tested tools
+      that deliver measurable impact — like a custom smartphone spectrometer and a Hyperloop
+      suspension design.
+    </p>
+  </section>
+
+  <!-- JOURNEY / TIMELINE -->
+  <section id="journey" class="section timeline">
+    <div class="timeline__card">
+      <span class="pill pill--muted">Past</span>
+      <p>
+        I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into
+        computer vision and data analysis in Python, and a curiosity for how engineering and
+        software fit together in real products.
+      </p>
+    </div>
+    <div class="timeline__card">
+      <span class="pill">Present</span>
+      <p>
+        I’m building a mobile-phone spectrometer with real-time analysis, an early-disease
+        exploration chatbot (GPT-4 + Gradio), and designed a Hyperloop suspension with
+        ASTM E8 testing and FEA. I focus on clean interfaces, validation, and measurable impact.
+      </p>
+    </div>
+    <div class="timeline__card">
+      <span class="pill pill--accent">Future</span>
+      <p>
+        Keep pushing practical innovation: robust data tools, applied ML, and devices that blend
+        software and engineering. I enjoy teaming up with people who care about outcomes and craft.
       </p>
     </div>
   </section>
 
-  <!-- Journey -->
-  <section id="journey" class="journey">
-    <div class="container">
-      <div class="cards3">
-        <article class="card">
-          <span class="pill">Past</span>
-          <p>
-            I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into computer
-            vision and data analysis in Python, and a curiosity for how engineering and software fit together
-            in real products.
-          </p>
-        </article>
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <h2>Technical Skills</h2>
 
-        <article class="card">
-          <span class="pill">Present</span>
-          <p>
-            I’m building a mobile-phone spectrometer with real-time analysis, an early-disease exploration chatbot
-            (GPT-4 + Gradio), and designed a Hyperloop suspension with ASTM E8 testing and FEA. I focus on clean
-            interfaces, validation, and measurable impact.
-          </p>
-        </article>
+    <div class="skills__grid">
+      <div class="skills__card">
+        <h3>Programming & Web</h3>
+        <ul class="tags">
+          <li>Java</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>HTML &amp; CSS</li>
+          <li>MATLAB</li>
+        </ul>
+      </div>
 
-        <article class="card">
-          <span class="pill">Future</span>
-          <p>
-            Keep pushing practical innovation: robust data tools, applied ML, and devices that blend software and
-            engineering. I enjoy teaming up with people who care about outcomes and craft.
-          </p>
-        </article>
+      <div class="skills__card">
+        <h3>Engineering & Simulation</h3>
+        <ul class="tags">
+          <li>Tensile Testing</li>
+          <li>FEA</li>
+          <li>SolidWorks</li>
+          <li>Material Selection</li>
+        </ul>
+      </div>
+
+      <div class="skills__card">
+        <h3>Tools & Productivity</h3>
+        <ul class="tags">
+          <li>Microsoft Office Suite</li>
+          <li>Financial Management &amp; Budgeting</li>
+          <li>Clay (AI)</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2 class="section-title">Technical Skills</h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <h2>Selected Projects</h2>
 
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Programming & Web</h3>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Python</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML &amp; CSS</span>
-            <span class="tag">SQL</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Git &amp; GitHub</span>
+    <div class="cards">
+
+      <!-- Spectrometer: same-tab, full-card clickable, centered play icon -->
+      <a class="card video-card" href="https://www.youtube.com/watch?v=nm2ot1LktmU">
+        <div class="card__media">
+          <img src="images/spectrometer.jpg" alt="Custom Mobile Phone Spectrometer" />
+          <div class="play-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
           </div>
+          <span class="yt-badge">Watch demo</span>
         </div>
+        <h3 class="card__title">Custom Mobile Phone Spectrometer</h3>
+        <p class="card__desc">
+          Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android
+          app for real-time intensity and absorbance plots.
+        </p>
+        <ul class="card__tags">
+          <li>Python</li><li>Android</li><li>Optics</li>
+        </ul>
+      </a>
 
-        <div class="skill-box">
-          <h3>Engineering & Simulation</h3>
-          <div class="tags">
-            <span class="tag">Tensile Testing</span>
-            <span class="tag">FEA</span>
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Material Selection</span>
-            <span class="tag">Data Visualization</span>
-          </div>
+      <!-- Chatbot -->
+      <a class="card" href="https://github.com/uqvyuaeu/Early-Disease-Detection-Chatbot" target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/chatbot.jpg" alt="Early Disease Detection Chatbot UI" />
         </div>
+        <h3 class="card__title">Early Disease Detection <span class="muted">Chatbot</span></h3>
+        <p class="card__desc">
+          Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured
+          notes for review and research.
+        </p>
+        <ul class="card__tags">
+          <li>Python</li><li>NLP</li><li>Gradio</li>
+        </ul>
+      </a>
 
-        <div class="skill-box">
-          <h3>Tools & Productivity</h3>
-          <div class="tags">
-            <span class="tag">Microsoft Office Suite</span>
-            <span class="tag">Financial Management &amp; Budgeting</span>
-            <span class="tag">Clay (AI)</span>
-          </div>
+      <!-- Hyperloop + Whitepaper -->
+      <div class="card">
+        <div class="card__media">
+          <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">Selected Projects</h2>
-
-      <div class="project-grid">
-
-        <!-- Spectrometer -->
-        <article class="project-card">
-          <div class="media">
-            <img src="images/spectrometer.jpg" alt="Mobile phone spectrometer" />
-            <button class="playbtn"
-              data-yt="https://www.youtube.com/embed/nm2ot1LktmU?autoplay=1"
-              aria-label="Play demo video">
-              ▶
-            </button>
-          </div>
-          <h3>Custom Mobile Phone Spectrometer</h3>
-          <p>
-            Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app
-            for real-time intensity and absorbance plots.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Android</span>
-            <span class="tag">Optics</span>
-          </div>
-        </article>
-
-        <!-- Early Disease Chatbot -->
-        <article class="project-card">
-          <div class="media">
-            <img src="images/chatbot.jpg" alt="Early disease detection chatbot" />
-          </div>
-          <h3>Early Disease Detection Chatbot</h3>
-          <p>
-            Prototype conversational tool using Python, GPT-4 and a Gradio interface.
-            Exports structured notes for review and research.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">NLP</span>
-            <span class="tag">Gradio</span>
-          </div>
-        </article>
-
-        <!-- Hyperloop Suspension -->
-        <article class="project-card">
-          <div class="media">
-            <img src="images/suspension.jpg" alt="Hyperloop suspension render" />
-          </div>
-          <h3>Design of Hyperloop Suspension</h3>
-          <p>
-            Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
-            Produced integration notes and team documentation.
-          </p>
-          <div class="tags">
-            <span class="tag">FEA</span>
-            <span class="tag">Materials</span>
-            <span class="tag">Docs</span>
-          </div>
-          <a class="btn btn-ghost sm"
-             href="White Paper_Hyperlink Submission.pdf" target="_blank" rel="noopener">
-             Open Whitepaper (PDF)
+        <h3 class="card__title">Design of Hyperloop Suspension</h3>
+        <p class="card__desc">
+          Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
+          Produced integration notes and team documentation.
+        </p>
+        <ul class="card__tags">
+          <li>FEA</li><li>Materials</li><li>Docs</li>
+        </ul>
+        <!-- update file path if needed -->
+        <div class="card__actions">
+          <a class="btn btn--subtle" href="files/White Paper_Hyperlink Submission.pdf" target="_blank" rel="noopener">
+            Open Whitepaper (PDF)
           </a>
-        </article>
-
-        <!-- NEW: Expense Tracker -->
-        <article class="project-card">
-          <div class="media">
-            <img src="images/expensetracker.jpg" alt="Smart Expense Tracker app screenshot" />
-          </div>
-          <h3>Smart Expense Tracker</h3>
-          <p>
-            A finance management app to log income/expenses, generate category breakdowns, set budgets,
-            and get insights. Clean UI, persistent storage, and analytics for better decisions.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Git &amp; GitHub</span>
-          </div>
-          <div class="actions-row">
-            <a class="btn btn-primary sm" href="https://github.com/uqvyuaeu/expense-tracker" target="_blank" rel="noopener">
-              View on GitHub
-            </a>
-          </div>
-        </article>
-
+        </div>
       </div>
+
+      <!-- Smart Expense Tracker -->
+      <a class="card" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">
+        <div class="card__media">
+          <img src="images/expense.png" alt="Smart Expense Tracker CLI screenshot" />
+        </div>
+        <h3 class="card__title">Smart Expense Tracker</h3>
+        <p class="card__desc">
+          A finance management app to log income/expenses, generate category breakdowns, set budgets,
+          and get insights. Clean UI, persistent storage, and analytics for better decisions.
+        </p>
+        <ul class="card__tags">
+          <li>Python</li><li>SQLite</li><li>Data Visualization</li><li>Git &amp; GitHub</li>
+        </ul>
+        <div class="card__actions">
+          <span class="btn btn--subtle">View on GitHub</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Let’s work together</h2>
-      <p>I reply quickly by email.</p>
-      <div class="contact-cta">
-        <a class="btn btn-primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
-        <a class="btn btn-ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="tel:+447521085239">Call me</a>
-      </div>
-      <footer class="footer">
-        © 2025 Muhammad Subhan Khan
-      </footer>
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2>Let’s work together</h2>
+    <p class="muted">I reply quickly by email.</p>
+    <div class="links">
+      <a class="btn btn--primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
+      <a class="btn" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="tel:+447521085239">Call me</a>
     </div>
+    <p class="copyright">© 2025 Muhammad Subhan Khan</p>
   </section>
 
-  <!-- Video Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Video dialog">
-      <button class="modal-close" data-close aria-label="Close">✕</button>
-      <div class="modal-media">
-        <iframe id="ytframe" width="100%" height="100%" frameborder="0"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
