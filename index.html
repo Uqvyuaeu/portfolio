@@ -1,349 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Muhammad Subhan Khan · Portfolio</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg-0:#0c1322;
-      --bg-1:#0e1628;
-      --bg-2:#101a30;
-      --card:#111a2e;
-      --card-2:#131e35;
-      --ink:#eaf1ff;
-      --muted:#b6c0da;
-      --accent:#ff8a65;      /* coral */
-      --accent-2:#d39df1;    /* soft violet */
-      --chip:#1e2a42;
-      --chip-br:#2a3754;
-      --link:#9fd0ff;
-      --good:#53d8a8;
-      --shadow:0 16px 40px rgba(0,0,0,.35);
-      --radius:16px;
-    }
-
-    /* ---------- Reset + base ---------- */
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 500px at 85% 80%,rgba(26,46,92,.35),transparent 70%),
-        radial-gradient(1200px 600px at 15% 20%,rgba(35,52,96,.45),transparent 65%),
-        linear-gradient(180deg,var(--bg-1),var(--bg-0));
-      min-height:100vh;
-      line-height:1.45;
-    }
-    a{color:var(--link);text-decoration:none}
-    a:hover{opacity:.85}
-
-    .wrap{max-width:1180px;margin-inline:auto;padding-inline:24px}
-
-    /* ---------- Top nav ---------- */
-    .nav{
-      position:sticky;top:0;z-index:30;
-      backdrop-filter:blur(8px);
-      background:linear-gradient(180deg,rgba(15,22,40,.85),rgba(15,22,40,.55));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav .row{display:flex;align-items:center;gap:28px;height:64px}
-    .brand{font-weight:800;letter-spacing:.18em;color:var(--ink)}
-    .spacer{flex:1 1 auto}
-    .nav a{color:var(--muted);font-weight:600}
-    .nav a.active,.nav a:hover{color:var(--ink)}
-
-    /* ---------- Hero ---------- */
-    .hero{padding:72px 0 36px}
-    .hero-grid{
-      display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
-    }
-    .pre{color:var(--muted);letter-spacing:.15em;font-weight:600}
-    .title{
-      margin:.3rem 0 1.1rem;
-      font-size:clamp(32px,6vw,56px);
-      line-height:1.05;font-weight:800;
-      background:
-        linear-gradient(180deg,var(--ink),var(--muted));
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
-    .title .accent{color:var(--accent)}
-    .lead{color:var(--muted);max-width:46ch}
-    .cta{margin-top:24px;display:flex;gap:12px}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg,var(--card),var(--card-2));
-      color:var(--ink);padding:12px 16px;border-radius:12px;
-      box-shadow:var(--shadow);font-weight:700
-    }
-    .btn.primary{background:linear-gradient(180deg,var(--accent),#ff6f43);border-color:transparent;color:#1b100b}
-    .btn:hover{transform:translateY(-2px);transition:transform .15s ease}
-
-    .portrait{
-      display:block;border-radius:18px;
-      background:linear-gradient(180deg,var(--card),var(--card-2));
-      box-shadow:var(--shadow);padding:14px;
-      border:1px solid rgba(255,255,255,.06)
-    }
-    .portrait img{width:100%;border-radius:14px;display:block}
-
-    /* ---------- Section shells ---------- */
-    section{padding:56px 0}
-    h2.section{font-size:clamp(24px,3.4vw,36px);margin:0 0 18px;color:var(--ink)}
-    p.max{max-width:80ch;color:var(--muted)}
-
-    /* ---------- Journey cards ---------- */
-    .journey{
-      display:grid;gap:20px;
-      grid-template-columns:repeat(3,minmax(0,1fr))
-    }
-    .card{
-      background:linear-gradient(180deg,var(--card),var(--card-2));
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)
-    }
-    .pill{
-      display:inline-block;margin-bottom:8px;
-      background:var(--chip);border:1px solid var(--chip-br);
-      color:var(--ink);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800
-    }
-    .pill.past{background:#2b3b5b}
-    .pill.present{background:#2e3c66}
-    .pill.future{background:#3a2f62}
-
-    /* ---------- Skills ---------- */
-    .skills-grid{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
-    .skills .group-title{font-weight:800;margin-bottom:10px;color:var(--ink)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{
-      background:var(--chip);border:1px solid var(--chip-br);
-      color:var(--ink);padding:6px 10px;border-radius:10px;font-size:13px;font-weight:700
-    }
-
-    /* ---------- Projects ---------- */
-    .projects{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
-    .proj .thumb{
-      position:relative;overflow:hidden;border-radius:12px;
-      border:1px solid rgba(255,255,255,.06)
-    }
-    .proj .thumb img{width:100%;display:block;transform:scale(1.01);transition:transform .3s ease}
-    .proj:hover .thumb img{transform:scale(1.06)}
-    .proj .meta{padding:12px 4px 0}
-    .proj h3{margin:0 0 6px;font-size:18px}
-    .hint{
-      position:absolute;inset:auto 8px 8px auto;
-      background:rgba(0,0,0,.65);color:#fff;border-radius:999px;
-      padding:6px 10px;font-size:12px;font-weight:700;opacity:0;transform:translateY(6px);
-      transition:all .15s ease
-    }
-    .proj:hover .hint{opacity:1;transform:none}
-
-    /* ---------- Contact ---------- */
-    .contact .btn{min-width:120px}
-    .contact small{color:var(--muted)}
-
-    /* ---------- Footer ---------- */
-    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:40px}
-
-    /* ---------- Responsive ---------- */
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr;gap:28px}
-      .journey,.skills-grid,.projects{grid-template-columns:1fr}
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Subhan Khan — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- NAV -->
-  <header class="nav">
-    <div class="wrap row">
-      <div class="brand">MSK</div>
-      <div class="spacer"></div>
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#journey">Journey</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">MSK</a>
+      <nav class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <main id="home" class="hero wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="pre">HELLO! I’M</div>
-        <h1 class="title">
-          <span class="accent">Muhammad Subhan</span> Khan
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Hello! I’m</p>
+        <h1 class="hero-title">
+          <span>Muhammad Subhan</span> <span class="fade">Khan</span>
         </h1>
         <p class="lead">
-          Engineering & Technology Enthusiast — I build practical tools across optics, Python/ML and mechanical design to solve real problems and ship useful products.
+          Engineering & Technology Enthusiast — I build practical tools across optics,
+          Python/ML and mechanical design to solve real problems and ship useful products.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
-          <a class="btn" href="Muhammad Subhan Khan Resume (5)[1].pdf" target="_blank" rel="noopener">View CV</a>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:subhan_khan@hotmail.co.uk">Contact Me</a>
+          <a class="btn btn-ghost" href="Muhammad Subhan Khan Resume (5)[1].pdf" target="_blank" rel="noopener">View CV</a>
         </div>
       </div>
-      <div class="portrait">
+
+      <div class="hero-photo">
         <img src="images/subhan.jpg" alt="Muhammad Subhan Khan" />
       </div>
     </div>
-  </main>
-
-  <!-- ABOUT -->
-  <section id="about" class="wrap">
-    <h2 class="section">About Me</h2>
-    <p class="max">
-      I’m a hands-on engineer and developer with experience in optical systems, materials testing, finite element analysis, and Python application development. I enjoy making well-tested tools that deliver measurable impact—like a custom smartphone spectrometer and a Hyperloop suspension design.
-    </p>
   </section>
 
-  <!-- JOURNEY -->
-  <section id="journey" class="wrap">
-    <div class="journey">
-      <article class="card">
-        <span class="pill past">Past</span>
-        <p class="max">
-          I started with hands-on builds — Arduino, sensors, and small mechanisms. That grew into computer vision and data analysis in Python, and a curiosity for how engineering and software fit together in real products.
+  <!-- ABOUT (improved layout) -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <h2>About Me</h2>
+        <p class="about-lead">
+          I’m a hands-on engineer and developer with experience in optical systems,
+          materials testing, finite element analysis, and Python application development.
+          I enjoy making well-tested tools that deliver measurable impact — like a custom
+          smartphone spectrometer and a Hyperloop suspension design.
         </p>
-      </article>
-      <article class="card">
-        <span class="pill present">Present</span>
-        <p class="max">
-          I’m building a mobile-phone spectrometer with real-time analysis, an early-disease exploration chatbot (GPT-4 + Gradio), and designed a Hyperloop suspension with ASTM E8 testing and FEA. I focus on clean interfaces, validation, and measurable impact.
-        </p>
-      </article>
-      <article class="card">
-        <span class="pill future">Future</span>
-        <p class="max">
-          Keep pushing practical innovation: robust data tools, applied ML, and devices that blend software and engineering. I enjoy teaming up with people who care about outcomes and craft.
-        </p>
-      </article>
+      </div>
+      <div class="about-facts">
+        <ul class="fact-list">
+          <li><strong>Domains:</strong> Optics, Data/ML, mechanical design, embedded & apps.</li>
+          <li><strong>Strengths:</strong> clear interfaces, validation, fast iteration, docs.</li>
+          <li><strong>Tools:</strong> Python, Java, SQL, HTML/CSS/JS, MATLAB, FEA, SolidWorks, Clay(AI).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST / PRESENT / FUTURE -->
+  <section id="journey" class="journey">
+    <div class="container">
+      <div class="cards-3">
+        <article class="card card-soft">
+          <span class="chip">Past</span>
+          <p>
+            I started with hands-on builds — Arduino, sensors, and small mechanisms.
+            That grew into computer vision and data analysis in Python, and a curiosity
+            for how engineering and software fit together in real products.
+          </p>
+        </article>
+
+        <article class="card card-soft">
+          <span class="chip chip-alt">Present</span>
+          <p>
+            I’m building a mobile-phone spectrometer with real-time analysis,
+            an early-disease exploration chatbot (GPT-4 + Gradio), and designed a
+            Hyperloop suspension with ASTM E8 testing and FEA. I focus on clean
+            interfaces, validation, and measurable impact.
+          </p>
+        </article>
+
+        <article class="card card-soft">
+          <span class="chip chip-purple">Future</span>
+          <p>
+            Keep pushing practical innovation: robust data tools, applied ML, and
+            devices that blend software and engineering. I enjoy teaming up with
+            people who care about outcomes and craft.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="wrap skills">
-    <h2 class="section" style="text-align:center;margin-bottom:18px;">Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="card">
-        <div class="group-title">Programming & Web</div>
-        <div class="chips">
-          <span class="chip">Java</span>
-          <span class="chip">Python</span>
-          <span class="chip">SQL</span>
-          <span class="chip">HTML &amp; CSS</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">MATLAB</span>
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h3>Programming & Web</h3>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">HTML &amp; CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">MATLAB</span>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="group-title">Engineering & Simulation</div>
-        <div class="chips">
-          <span class="chip">Tensile Testing</span>
-          <span class="chip">FEA</span>
-          <span class="chip">SolidWorks</span>
-          <span class="chip">Material Selection</span>
+
+        <div class="skill-card">
+          <h3>Engineering & Simulation</h3>
+          <div class="tags">
+            <span class="tag">Tensile Testing</span>
+            <span class="tag">FEA</span>
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Material Selection</span>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="group-title">Tools & Productivity</div>
-        <div class="chips">
-          <span class="chip">Microsoft Office Suite</span>
-          <span class="chip">Financial Management &amp; Budgeting</span>
-          <span class="chip">Clay (AI)</span>
+
+        <div class="skill-card">
+          <h3>Tools & Productivity</h3>
+          <div class="tags">
+            <span class="tag">Microsoft Office Suite</span>
+            <span class="tag">Financial Management &amp; Budgeting</span>
+            <span class="tag">Clay (AI)</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="wrap">
-    <h2 class="section" style="text-align:center;margin-bottom:18px;">Selected Projects</h2>
-    <div class="projects">
+  <!-- PROJECTS (centred & sized) -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Selected Projects</h2>
 
-      <!-- Spectrometer: NEW TAB (as before) -->
-      <article class="proj card">
-        <a class="thumb" href="https://www.youtube.com/watch?v=nm2ot1LktmU" target="_blank" rel="noopener">
-          <img src="images/spectrometer.jpg" alt="Custom Mobile Phone Spectrometer" />
-          <span class="hint">Opens on YouTube ▶</span>
-        </a>
-        <div class="meta">
-          <h3>Custom Mobile Phone Spectrometer</h3>
-          <p class="max">
-            Portable spectrometer for a Samsung A13 with Python image analysis integrated into an Android app for real-time intensity and absorbance plots.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">Android</span><span class="chip">Optics</span>
+      <div class="proj-grid">
+        <!-- Spectrometer -->
+        <article class="proj-card click-video" data-video="https://www.youtube.com/embed/nm2ot1LktmU">
+          <div class="card-media">
+            <img src="images/spectrometer.jpg" alt="Spectrometer product photo" />
+            <button class="play-badge" aria-label="Play video">
+              ▶
+            </button>
           </div>
-        </div>
-      </article>
-
-      <!-- Chatbot -->
-      <article class="proj card">
-        <div class="thumb">
-          <img src="images/chatbot.jpg" alt="Early Disease Detection Chatbot" />
-        </div>
-        <div class="meta">
-          <h3>Early Disease Detection Chatbot</h3>
-          <p class="max">
-            Prototype conversational tool using Python, GPT-4 and a Gradio interface. Exports structured notes for review and research.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">NLP</span><span class="chip">Gradio</span>
+          <div class="card-body">
+            <h3>Custom Mobile Phone Spectrometer</h3>
+            <p>
+              Portable spectrometer for a Samsung A13 with Python image analysis integrated
+              into an Android app for real-time intensity and absorbance plots.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Android</span><span class="tag">Optics</span>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Hyperloop with PDF -->
-      <article class="proj card">
-        <div class="thumb">
-          <img src="images/suspension.jpg" alt="Hyperloop suspension" />
-        </div>
-        <div class="meta">
-          <h3>Design of Hyperloop Suspension</h3>
-          <p class="max">
-            Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight. Produced integration notes and team documentation.
-          </p>
-          <div class="chips">
-            <span class="chip">FEA</span><span class="chip">Materials</span><span class="chip">Docs</span>
+        <!-- Chatbot -->
+        <article class="proj-card">
+          <div class="card-media">
+            <img src="images/chatbot.jpg" alt="Chatbot sign-in mock" />
           </div>
-          <p style="margin-top:8px">
-            <a class="btn" style="padding:8px 12px" href="files/hyperloop-whitepaper.pdf" target="_blank" rel="noopener">Open Whitepaper (PDF)</a>
-          </p>
-        </div>
-      </article>
+          <div class="card-body">
+            <h3>Early Disease Detection Chatbot</h3>
+            <p>
+              Prototype conversational tool using Python, GPT-4 and a Gradio interface.
+              Exports structured notes for review and research.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Gradio</span>
+            </div>
+          </div>
+        </article>
 
+        <!-- Hyperloop -->
+        <article class="proj-card">
+          <div class="card-media">
+            <img src="images/suspension.jpg" alt="Hyperloop suspension CAD" />
+          </div>
+          <div class="card-body">
+            <h3>Design of Hyperloop Suspension</h3>
+            <p>
+              Materials selection, ASTM E8 testing and FEA to improve durability and reduce weight.
+              Produced integration notes and team documentation.
+            </p>
+            <div class="tags">
+              <span class="tag">FEA</span><span class="tag">Materials</span><span class="tag">Docs</span>
+            </div>
+            <a class="btn btn-ghost sm" href="White Paper_Hyperlink Submission.pdf" target="_blank" rel="noopener">
+              Open Whitepaper (PDF)
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="wrap contact">
-    <h2 class="section">Let’s work together</h2>
-    <p class="max">I reply quickly by email.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
-      <a class="btn" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="tel:+447521085239">Call me</a>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s work together</h2>
+      <p class="muted">I reply quickly by email.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:subhan_khan@hotmail.co.uk">Email</a>
+        <a class="btn btn-ghost" href="https://github.com/uqvyuaeu" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="tel:+447521085239">Call me</a>
+      </div>
+      <hr class="sep" />
+      <p class="copyright">© 2025 Muhammad Subhan Khan</p>
     </div>
   </section>
 
-  <footer class="wrap">
-    © 2025 Muhammad Subhan Khan
-  </footer>
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Project video">
+      <button class="modal__close" aria-label="Close video" data-close-modal>✕</button>
+      <div class="modal__frame">
+        <iframe id="ytFrame" src="" title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // Smooth-scroll for top nav
-    document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href'); if(id.length<2) return;
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+    // Open modal on spectrometer click
+    document.querySelectorAll('.click-video').forEach(card => {
+      card.addEventListener('click', () => {
+        const url = card.getAttribute('data-video') + '?autoplay=1';
+        document.getElementById('ytFrame').src = url;
+        document.getElementById('videoModal').classList.add('open');
+        document.getElementById('videoModal').setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
       });
     });
+    // Close modal (backdrop or X)
+    document.querySelectorAll('[data-close-modal]').forEach(el => {
+      el.addEventListener('click', () => closeModal());
+    });
+    function closeModal(){
+      document.getElementById('videoModal').classList.remove('open');
+      document.getElementById('videoModal').setAttribute('aria-hidden', 'true');
+      document.getElementById('ytFrame').src = '';
+      document.body.classList.remove('no-scroll');
+    }
+    // Esc to close
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 </body>
 </html>
